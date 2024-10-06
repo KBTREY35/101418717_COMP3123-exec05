@@ -18,7 +18,7 @@ router.get('/profile', (req, res) => {
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
     const userData = JSON.parse(fs.readFileSync(path.join(__dirname, 'user.json')));
-    const user = userData;  // Adjusting to match your single user structure
+    const user = userData;  
 
     if (user.username !== username) {
         res.json({ status: false, message: 'User Name is invalid' });
